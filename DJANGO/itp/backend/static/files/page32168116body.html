@@ -1,0 +1,632 @@
+<!--allrecords--><div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="6433793" data-tilda-page-id="32168116" data-tilda-formskey="8ea32c02f8c84c37023879fda6433793"><div id="rec520007345" class="r t-rec" style=" " data-animationappear="off" data-record-type="257" ><!-- T228 --><div id="nav520007345marker"></div><div class="tmenu-mobile" ><div class="tmenu-mobile__container"><div class="tmenu-mobile__burgerlogo"><img src="images/tild3235-6464-4265-b839-326362396261__32776__.png" class="tmenu-mobile__imglogo" imgfield="img" style="max-width: 200px; width: 200px;" alt=""></div><div class="t-menuburger t-menuburger_first "><span style="background-color:#827cba;"></span><span style="background-color:#827cba;"></span><span style="background-color:#827cba;"></span><span style="background-color:#827cba;"></span></div><script>function t_menuburger_init(recid) {
+var rec = document.querySelector('#rec' + recid);
+if (!rec) return;
+var burger = rec.querySelector('.t-menuburger');
+if (!burger) return;
+var isSecondStyle = burger.classList.contains('t-menuburger_second');
+if (isSecondStyle && !window.isMobile && !('ontouchend' in document)) {
+burger.addEventListener('mouseenter', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-unhovered');
+burger.classList.add('t-menuburger-hovered');
+});
+burger.addEventListener('mouseleave', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-hovered');
+burger.classList.add('t-menuburger-unhovered');
+setTimeout(function() {
+burger.classList.remove('t-menuburger-unhovered');
+}, 300);
+});
+}
+if (!burger.closest('.tmenu-mobile') &&
+!burger.closest('.t450__burger_container') &&
+!burger.closest('.t204__burger')) {
+burger.addEventListener('click', function() {
+burger.classList.toggle('t-menuburger-opened');
+burger.classList.remove('t-menuburger-unhovered');
+});
+}
+var menu = rec.querySelector('[data-menu="yes"]');
+if (!menu) return;
+var menuLinks = menu.querySelectorAll('.t-menu__link-item');
+var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link'];
+Array.prototype.forEach.call(menuLinks, function (link) {
+link.addEventListener('click', function () {
+var isSubmenuHook = submenuClassList.some(function (submenuClass) {
+return link.classList.contains(submenuClass);
+});
+if (isSubmenuHook) return;
+burger.classList.remove('t-menuburger-opened');
+});
+});
+}
+t_onReady(function() {
+t_onFuncLoad('t_menuburger_init', function(){t_menuburger_init('520007345');});
+});</script><style>.t-menuburger {
+position: relative;
+flex-shrink: 0;
+width: 28px;
+height: 20px;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: .5s ease-in-out;
+cursor: pointer;
+z-index: 999;
+}
+/*---menu burger lines---*/
+.t-menuburger span {
+display: block;
+position: absolute;
+width: 100%;
+opacity: 1;
+left: 0;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: .25s ease-in-out;
+height: 3px;
+background-color: #000;
+}
+.t-menuburger span:nth-child(1) {
+top: 0px;
+}
+.t-menuburger span:nth-child(2),
+.t-menuburger span:nth-child(3) {
+top: 8px;
+}
+.t-menuburger span:nth-child(4) {
+top: 16px;
+}
+/*menu burger big*/
+.t-menuburger__big {
+width: 42px;
+height: 32px;
+}
+.t-menuburger__big span {
+height: 5px;
+}
+.t-menuburger__big span:nth-child(2),
+.t-menuburger__big span:nth-child(3) {
+top: 13px;
+}
+.t-menuburger__big span:nth-child(4) {
+top: 26px;
+}
+/*menu burger small*/
+.t-menuburger__small {
+width: 22px;
+height: 14px;
+}
+.t-menuburger__small span {
+height: 2px;
+}
+.t-menuburger__small span:nth-child(2),
+.t-menuburger__small span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger__small span:nth-child(4) {
+top: 12px;
+}
+/*menu burger opened*/
+.t-menuburger-opened span:nth-child(1) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.t-menuburger-opened span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+.t-menuburger-opened span:nth-child(4) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(1) {
+top: 6px;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(4) {
+top: 18px;
+}
+.t-menuburger-opened.t-menuburger__small span:nth-child(1),
+.t-menuburger-opened.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+/*---menu burger first style---*/
+@media (hover), (min-width:0\0) {
+.t-menuburger_first:hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_first:hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+/*---menu burger second style---*/
+.t-menuburger_second span:nth-child(2),
+.t-menuburger_second span:nth-child(3) {
+width: 80%;
+left: 20%;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_second.t-menuburger-hovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-hovered span:nth-child(3) {
+animation: t-menuburger-anim 0.3s ease-out normal forwards;
+}
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(3) {
+animation: t-menuburger-anim2 0.3s ease-out normal forwards;
+}
+}
+.t-menuburger_second.t-menuburger-opened span:nth-child(2),
+.t-menuburger_second.t-menuburger-opened span:nth-child(3){
+left: 0;
+right: 0;
+width: 100%!important;
+}
+/*---menu burger third style---*/
+.t-menuburger_third span:nth-child(4) {
+width: 70%;
+left: unset;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_third:not(.t-menuburger-opened):hover span:nth-child(4) {
+width: 100%;
+}
+}
+.t-menuburger_third.t-menuburger-opened span:nth-child(4) {
+width: 0!important;
+right: 50%;
+}
+/*---menu burger fourth style---*/
+.t-menuburger_fourth {
+height: 12px;
+}
+.t-menuburger_fourth.t-menuburger__small {
+height: 8px;
+}
+.t-menuburger_fourth.t-menuburger__big {
+height: 18px;
+}
+.t-menuburger_fourth span:nth-child(2),
+.t-menuburger_fourth span:nth-child(3) {
+top: 4px;
+opacity: 0;
+}
+.t-menuburger_fourth span:nth-child(4) {
+top: 8px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__big span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(4) {
+top: 12px;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(1),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(4) {
+top: 4px;
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(2),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(3) {
+opacity: 1;
+}
+/*---menu burger animations---*/
+@keyframes t-menuburger-anim {
+0% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+50% {
+width: 100%;
+left: 0;
+right: 0;
+}
+100% {
+width: 80%;
+left: 0;
+right: 20%;
+}
+}
+@keyframes t-menuburger-anim2 {
+0% {
+width: 80%;
+left: 0;
+}
+50% {
+width: 100%;
+right: 0;
+left: 0;
+}
+100% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+}</style></div></div><style>.tmenu-mobile {
+background-color: #111;
+display: none;
+width: 100%;
+top: 0;
+z-index: 990;
+}
+.tmenu-mobile_positionfixed {
+position: fixed;
+}
+.tmenu-mobile__text {
+color: #fff;
+}
+.tmenu-mobile__container {
+min-height: 64px;
+padding: 20px;
+position: relative;
+box-sizing: border-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-justify-content: space-between;
+-ms-flex-pack: justify;
+justify-content: space-between;
+}
+.tmenu-mobile__list {
+display: block;
+}
+.tmenu-mobile__burgerlogo {
+display: inline-block;
+font-size: 24px;
+font-weight: 400;
+white-space: nowrap;
+vertical-align: middle;
+}
+.tmenu-mobile__imglogo {
+height: auto;
+display: block;
+max-width: 300px!important;
+box-sizing: border-box;
+padding: 0;
+margin: 0 auto;
+}
+@media screen and (max-width: 980px) {
+.tmenu-mobile__menucontent_hidden {
+display: none;
+height: 100%;
+}
+.tmenu-mobile {
+display: block;
+}
+}
+@media screen and (max-width: 980px) {
+#rec520007345 .tmenu-mobile {
+background-color: #ffffff;
+}
+#rec520007345 .t-menuburger {
+-webkit-order: 1;
+-ms-flex-order: 1;
+order: 1;
+}
+}</style><div id="nav520007345" class="t228 t228__positionfixed tmenu-mobile__menucontent_hidden" style="background-color: rgba(255,255,255,1); " data-bgcolor-hex="#ffffff" data-bgcolor-rgba="rgba(255,255,255,1)" data-navmarker="nav520007345marker" data-appearoffset="" data-bgopacity-two="" data-menushadow="" data-bgopacity="1" data-menu-items-align="center" data-menu="yes"><div class="t228__maincontainer " style=""><div class="t228__padding40px"></div><div class="t228__leftside"><div class="t228__leftcontainer"><img class="t228__imglogo t228__imglogomobile" 
+src="images/tild3235-6464-4265-b839-326362396261__32776__.png" 
+imgfield="img"
+style="max-width: 200px; width: 200px; min-width: 200px; height: auto; display: block;"
+alt="" role="presentation"></div></div><div class="t228__centerside "><nav class="t228__centercontainer" 
+aria-label="Основные разделы на странице"><ul class="t228__list t228__list_hidden" 
+role="menubar" aria-label="Основные разделы на странице"><li class="t228__list_item" 
+role="none" 
+style="padding:0 15px 0 0;"><a class="t-menu__link-item" 
+href="#rec520475311"
+role="menuitem" tabindex="0" data-menu-submenu-hook="" data-menu-item-number="1" 
+style="color:#827cba;font-size:22px;font-weight:600;">Компания</a></li><li class="t228__list_item" 
+role="none" 
+style="padding:0 15px;"><a class="t-menu__link-item" 
+href="#rec521988656"
+role="menuitem" tabindex="0" data-menu-submenu-hook="" data-menu-item-number="2" 
+style="color:#827cba;font-size:22px;font-weight:600;">Услуги</a></li><li class="t228__list_item" 
+role="none" 
+style="padding:0 15px;"><a class="t-menu__link-item" 
+href="#rec521463543"
+role="menuitem" tabindex="0" data-menu-submenu-hook="" data-menu-item-number="3" 
+style="color:#827cba;font-size:22px;font-weight:600;">Карьера</a></li><li class="t228__list_item" 
+role="none" 
+style="padding:0 0 0 15px;"><a class="t-menu__link-item" 
+href="#rec524467542"
+role="menuitem" tabindex="0" data-menu-submenu-hook="" data-menu-item-number="4" 
+style="color:#827cba;font-size:22px;font-weight:600;">Контакты</a></li></ul></nav></div><div class="t228__rightside"><div class="t228__rightcontainer"><div class="t228__right_descr" style="font-size:18px;"><a href="tel:73432151496" style="color: rgb(130, 124, 186);">+7 (343) 215-14-96</a><br /><a href="mailto:info@itprsp.ru" style="color: rgb(130, 124, 186);">info@itprsp.ru</a></div> </div></div><div class="t228__padding40px"></div></div></div><style>@media screen and (max-width: 980px) {
+#rec520007345 .t228__leftcontainer{
+display: none;
+}
+}</style><style>@media screen and (max-width: 980px) {
+#rec520007345 .t228__leftcontainer {
+padding: 20px;
+}
+#rec520007345 .t228__imglogo {
+padding: 20px 0;
+}
+#rec520007345 .t228 {
+position: static;
+}
+}</style><script>window.addEventListener('load', function () {
+t_onFuncLoad('t228_setWidth', function () {
+t228_setWidth('520007345');
+});
+});
+window.addEventListener('resize', t_throttle(function () {
+t_onFuncLoad('t228_setWidth', function () {
+t228_setWidth('520007345');
+});
+t_onFuncLoad('t_menu__setBGcolor', function () {
+t_menu__setBGcolor('520007345', '.t228');
+});
+}));
+t_onReady(function () {
+t_onFuncLoad('t_menu__highlightActiveLinks', function () {
+t_menu__highlightActiveLinks('.t228__list_item a');
+});
+t_onFuncLoad('t_menu__findAnchorLinks', function () {
+t_menu__findAnchorLinks('520007345', '.t228__list_item a');
+});
+t_onFuncLoad('t228__init', function () {
+t228__init('520007345');
+});
+t_onFuncLoad('t_menu__setBGcolor', function () {
+t_menu__setBGcolor('520007345', '.t228');
+});
+t_onFuncLoad('t228_setWidth', function () {
+t228_setWidth('520007345');
+});
+t_onFuncLoad('t_menu__createMobileMenu', function () {
+t_menu__createMobileMenu('520007345', '.t228');
+});
+});</script><!--[if IE 8]><style>#rec520007345 .t228 {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D9ffffff', endColorstr='#D9ffffff');
+}</style><![endif]--><style>#rec520007345 .t-menu__link-item{
+outline: none;
+}
+/* #rec520007345 .t-menu__link-item:not(:focus-visible){
+outline: none;
+} */
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+{
+#rec520007345 .t-menu__link-item,
+#rec520007345 .t-menu__link-item.t-active {
+opacity: 1 !important;
+}
+}</style></div><div id="rec520473413" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec520475311" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px;background-color:#ffffff; " data-record-type="486" data-bg-color="#ffffff"><!-- T486 --><div class="t486"> <div class="t-container"> <div class="t486__top t-col t-col_6 "> <div class="t486__imgcontainer"> <div class="t486__row"> <div class="t486__imgwrapper" itemscope itemtype="http://schema.org/ImageObject"> <meta itemprop="image" content="images/tild3638-3530-4261-a133-353531336363__it-05.png"> <div class="t486__blockimg t-bgimg" data-original="images/tild3638-3530-4261-a133-353531336363__it-05.png" 
+bgimgfield="img"
+style="background-image:url('images/tild3638-3530-4261-a133-353531336363__it-05.png');"
+></div> <div class="t486__separator"></div> </div> <div class="t486__imgwrapper" itemscope itemtype="http://schema.org/ImageObject"> <meta itemprop="image" content="images/tild3064-6165-4138-a532-336434373362__it-06.png"> <div class="t486__blockimg t-bgimg" data-original="images/tild3064-6165-4138-a532-336434373362__it-06.png" 
+bgimgfield="img2" 
+style="background-image:url('images/tild3064-6165-4138-a532-336434373362__it-06.png');"
+></div> <div class="t486__separator"></div> </div> </div> <div class="t486__row t486__row_last"> <div class="t486__imgwrapper" itemscope itemtype="http://schema.org/ImageObject"> <meta itemprop="image" content="images/tild3034-6130-4533-a633-383964303530__it-07.png"> <div class="t486__blockimg t-bgimg" data-original="images/tild3034-6130-4533-a633-383964303530__it-07.png" 
+bgimgfield="img3"
+style="background-image:url('images/tild3034-6130-4533-a633-383964303530__it-07.png');"
+></div> <div class="t486__separator"></div> </div> <div class="t486__imgwrapper" itemscope itemtype="http://schema.org/ImageObject"> <meta itemprop="image" content="images/tild3532-3530-4635-b331-393131356130__it-08.png"> <div class="t486__blockimg t-bgimg" data-original="images/tild3532-3530-4635-b331-393131356130__it-08.png" 
+bgimgfield="img4"
+style="background-image:url('images/tild3532-3530-4635-b331-393131356130__it-08.png');"
+></div> <div class="t486__separator"></div> </div> </div> </div> </div> <div class="t-col t-col_5 "> <div class="t486__textwrapper t-align_left"> <div class="t486__content t-valign_middle"> <div class="t486__box"> 
+<div class="t486__descr t-descr t-descr_md " field="descr" style="color:#000000;">Мы помогаем своим клиентам значительно повысить профессиональный уровень ИТ-обеспечения бизнеса и при этом оптимизировать расходы на содержание собственного ИТ-подразделения.<br />На сегодняшний день многие предприятия и организации Свердловской области из разных отраслей бизнеса доверили нам мониторинг и управление своей ИТ-инфраструктурой.</div> 
+</div> </div> </div> </div> </div></div><script>t_onReady(function() {
+t_onFuncLoad('t486_setHeight', function() {
+window.addEventListener('resize', t_throttle(function() {
+t486_setHeight('520475311');
+}));
+t486_setHeight('520475311');
+var rec = document.querySelector('#rec520475311');
+if (rec) {
+var wrapper = rec.querySelector('.t486');
+if (wrapper) {
+wrapper.addEventListener('displayChanged', function() {
+t486_setHeight('520475311');
+});
+}
+}
+});
+});</script></div><div id="rec520473419" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521456040" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="490" ><!-- t490 --><div class="t490"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><h1 class="t-section__title t-title t-title_xs" field="btitle"><span style="color: rgb(130, 124, 186);">Почему мы</span></h1></div></div></div><div class="t-container"> <div class="t490__col t-col t-col_4 t-align_center t-item"><img class="t490__img t-img" 
+src="images/lib__tildaicon__62366332-3064-4261-b234-616431613861__tilda_icons_41_hotel_couple.svg" 
+imgfield="li_img__1476968690512"
+alt="" role="presentation"><div class="t490__wrappercenter "><div class="t-descr t-descr_xs" style="" field="li_descr__1476968690512"><div style="font-size: 18px;" data-customstyle="yes">10+ высококвалифицированных специалистов в штате</div></div></div></div> <div class="t490__col t-col t-col_4 t-align_center t-item"><img class="t490__img t-img" 
+src="images/lib__tildaicon__38656337-3834-4662-b834-313030623966__tilda_icons_37_finance_technologies_planing.svg" 
+imgfield="li_img__1476968700508"
+alt="" role="presentation"><div class="t490__wrappercenter "><div class="t-descr t-descr_xs" style="" field="li_descr__1476968700508"><div style="font-size:18px;" data-customstyle="yes">Персонал с 20-летним опытом оказания ИТ-услуг</div></div></div></div> <div class="t490__col t-col t-col_4 t-align_center t-item"><img class="t490__img t-img" 
+src="images/lib__tildaicon__38363462-3162-4631-b230-303639663238__tilda_icons_43_logistics_operator.svg" 
+imgfield="li_img__1476968722790"
+alt="" role="presentation"><div class="t490__wrappercenter "><div class="t-descr t-descr_xs" style="" field="li_descr__1476968722790"><div style="font-size:18px;" data-customstyle="yes">Техническая и консультационная поддержка 24х7х365</div></div></div></div></div></div></div><div id="rec521451187" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521457728" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-animationappear="off" data-record-type="849" ><!-- t849--><div class="t849"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><div class="t-section__title t-title t-title_xs" field="btitle"><span style="color: rgb(130, 124, 186);">Компетенции, системы и технологии</span></div></div></div></div><div class="t-container"><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion1_521457728" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218331971" style="color:#827cba;">Web-ресурсы</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion1_521457728"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218331971" style=""><ul><li>Nginx</li><li>Haproxy</li><li>Docker</li><li>PHP</li><li>Nodejs</li><li>pm2</li><li>go</li><li>1C-Битрикс</li><li>clickhouse</li><li>elasticsearch</li><li>manticore search</li><li>s3</li></ul></div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion2_521457728" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218535874" style="color:#827cba;">Сети передачи данных</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion2_521457728"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218535874" style=""><ul><li>Switching (VLAN, xSTP, LAG, MLAG, ERPS)</li><li>Routing</li><li>Security</li><li>VPN (DMVPN, IPSEC, построение VPN с шифрованием по ГОСТ)</li><li>WiFi</li><li>Juniper Networks</li><li>Cisco Systems</li><li>Extreme Networks</li><li>D-Link</li><li>C-Терра</li><li>Инфотекс (VipNet)</li><li>Код безопасности (Континент)</li></ul></div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion3_521457728" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218625139" style="color:#827cba;">Системы мониторинга</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion3_521457728"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218625139" style=""><ul><li>Zabbix</li><li>Grafana</li><li>NetCool</li></ul></div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion4_521457728" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218700960" style="color:#827cba;">Настройка вычислительных мощностей, внедрение и сопровождение</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion4_521457728"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218700960" style=""><ul><li>Windows</li><li>kafka</li><li>*nix</li><li>zimbra</li><li>VmWare Hyper-V</li><li>bind9</li><li>Oracle Postgre</li><li>tomcat</li><li>Ansible</li><li>adfs</li><li>Zabbix</li><li>apache2</li><li>Grafana</li><li>fluentd</li><li>Kubernetes</li><li>fluent-bit</li><li>opensearch</li><li>nfs</li><li>Syslog</li><li>smb</li><li>DNS</li><li>vmware horizon</li><li>keycloak</li><li>netbackup</li><li>syslog</li><li>cacti</li><li>prometheus</li><li>sftp</li></ul></div></div></div></div></div><div class="t849__border" style="height: 1px; background-color: #eee;"></div></div></div></div><script type="text/javascript">t_onReady(function () {
+t_onFuncLoad('t849_init', function () {
+t849_init('521457728');
+});
+});</script></div><div id="rec521457682" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521458208" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="248" ><!-- T220 --><div class="t220"><div class="t-container "> <div class="t-col t-col_8 t-prefix_2"> <div class="t220__textwrapper" style="background-color:#827cba;"> <div style=""> 
+<div class="t220__title t-heading t-heading_sm" style="color:#ffffff;" field="title">Команда</div> <div field="text" class="t220__text t-text t-text_md " style="color:#ffffff;">Наши главные ценности - максимальная клиентоориентированность и ответственность за результат.<br /><br /><ul><li>80% наших специалистов имеют более чем 20-летний опыт в ИТ.</li><li>100% наших специалистов подтверждают свои компетенции на специальном ежегодном тестировании.</li><li>90% наших специалистов имеют профильное высшее образование.</li></ul></div> </div> </div></div></div></div></div><div id="rec521457952" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521459157" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="191" ><!-- T142 --><div class="t142"><div class="t-container_100"> <div class="t142__wrapone"><div class="t142__wraptwo"> <a href="#rec524467660" target="" class=""> <div class="t-btn t142__submit t-btn_md" style="color:#ffffff;background-color:#827cba;" > <span class="t142__text">Узнать больше</span> </div> </a> </div> </div></div></div><script>t_onReady(function() {
+t_onFuncLoad('t142_checkSize', function(){t142_checkSize('521459157');});
+});
+window.addEventListener('load', function(){
+t_onFuncLoad('t142_checkSize', function(){t142_checkSize('521459157');});
+});</script></div><div id="rec521459124" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521461108" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="106" ><!-- T004 --><div class="t004"><div class="t-container "> <div class="t-col t-col_8 t-prefix_2"><div field="text" class="t-text t-text_md " style=""><div style="font-size: 42px;" data-customstyle="yes"><p style="text-align: center;"><strong style="color: rgb(130, 124, 186);">Выгоды</strong></p></div></div></div></div></div></div><div id="rec521459717" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-animationappear="off" data-record-type="664" ><!-- T664 --><div class="t664"><ul class="t664__container t-container"><li class="t664__col t-col t-col_8 t-prefix_2" ><div class="t664__wrapper" style=" border: 1px solid #eee;" itemscope itemtype="http://schema.org/Question"><div class="t664__question" ><div class="t664__question-text t-text t-text_sm" field="li_text__1480611048442" style="" itemprop="text"><strong style="color: rgb(130, 124, 186);">Для бизнеса</strong></div></div><div class="t664__answer" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer"><div class="t664__question-text t-text t-text_sm" field="li_text2__1480611048442" style=" " itemprop="text"><ul><li>Сокращение затрат на подбор, адаптацию, обучение, отпусков, больничных, командировок для сотрудников собственного ИТ-подразделения</li><li>Гибкость форматов поддержки: базовая, стандартная, полная</li><li>Внедрение лучших накопленных практик и решений;</li><li>Конфиденциальность гарантируется подписанием NDA, а уровень сервиса регламентируется в договоре SLA.</li></ul></div></div></div> </li><li class="t664__col t-col t-col_8 t-prefix_2" ><div class="t664__wrapper" style=" border: 1px solid #eee;" itemscope itemtype="http://schema.org/Question"><div class="t664__question" ><div class="t664__question-text t-text t-text_sm" field="li_text__1480611044356" style="" itemprop="text"><strong style="color: rgb(130, 124, 186);">Для руководителя</strong></div></div><div class="t664__answer" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer"><div class="t664__question-text t-text t-text_sm" field="li_text2__1480611044356" style=" " itemprop="text"><ul><li>Освобождение от рутинных процессов, фокус на стратегии развития компании</li><li>Постоянный контроль ИТ-инфраструктуры предприятия</li></ul></div></div></div> </li><li class="t664__col t-col t-col_8 t-prefix_2" ><div class="t664__wrapper" style=" border: 1px solid #eee;" itemscope itemtype="http://schema.org/Question"><div class="t664__question" ><div class="t664__question-text t-text t-text_sm" field="li_text__1669884667496" style="" itemprop="text"><strong style="color: rgb(130, 124, 186);">Для сотрудника</strong></div></div><div class="t664__answer" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer"><div class="t664__question-text t-text t-text_sm" field="li_text2__1669884667496" style=" " itemprop="text"><ul><li>Мгновенная реакция на заявку пользователя</li><li>Высокая квалификация нештатных ИТ-специалистов</li><li>Любые каналы обращения: мессенджеры, почта, телефон, web-форма</li></ul></div></div></div> </li></ul></div></div><div id="rec521459451" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521988656" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-animationappear="off" data-record-type="849" ><!-- t849--><div class="t849"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><div class="t-section__title t-title t-title_xs" field="btitle"><span style="color: rgb(130, 124, 186);">Услуги</span></div></div></div></div><div class="t-container"><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion1_521988656" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218331971" style="color:#827cba;">ИТ-аутсорсинг</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion1_521988656"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218331971" style="">Комплексное сопровождение всей ИТ-инфраструктуры предприятия. Наши услуги позволяют полностью заменить ваших штатных системных администраторов. В отличие от штатных сотрудников, мы работаем 24Х7. У вас появляется единая точка входа запросов на решение любых вопросов в области ИТ. Также, мы можем не заменять, а дополнять ваших ИТ-специалистов по отсутствующим у них компетенциям.<br />Выполняем сопровождение:<br /><ul><li>рабочих мест</li><li>серверов под управлением Windows</li><li>серверов под управлением *NIX</li><li>программного обеспечения</li><li>сети передачи данных</li></ul></div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion2_521988656" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218535874" style="color:#827cba;">ИТ-мониторинг</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion2_521988656"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218535874" style="">Постоянный интеллектуальный контроль за работой всех ИТ-систем предприятия. Система мониторинга позволяет максимально оперативно решать проблемы и затруднения, о которых вы еще даже не подозревали. В итоге, ваша ИТ инфраструктура работает надежно и без сбоев.<br />Система мониторинга позволяет выбирать ИТ-системы и компоненты, подлежащие анализу. Для каждой составляющей ИТ-системы устанавливаются нормальные и критичные показатели. При отклонении от установленных норм, система мониторинга немедленно реагирует и отправляет уведомление ответственному сотруднику. Это особенно важно для производственных предприятий.</div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion3_521988656" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1669970901337" style="color:#827cba;">ИТ-аудит</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion3_521988656"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1669970901337" style="">Аудит ИТ-инфраструктуры вашей компании позволяет получить полное представление о её текущем состоянии. На основании полученной информации выявляются ключевые проблемы и определяются способы и методы их решения, а также направления дальнейшей оптимизации и модернизации.<br />По выбору клиента, проводится как полный аудит всех IT-систем, так и отдельных компонентов инфраструктуры.<br />Мы можем провести аудит таких ИТ-систем как:<br /><ul><li>серверное оборудование</li><li>программное обеспечение</li><li>пользовательские рабочие станции</li><li>сетевое оборудование</li><li>периферийное оборудование</li></ul></div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion4_521988656" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218625139" style="color:#827cba;">ИТ-консалтинг</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion4_521988656"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218625139" style="">Консалтинг в сфере ИТ проводится в целях повышения эффективности работы предприятия за счёт внедрения и использования современных ИТ-систем и сервисов.<br />Помощь профессиональных специалистов позволяет решить множество задач. В том числе:<br /><ul><li>создать эффективную структурированную информационную систему управления предприятием</li><li>полностью или частично автоматизировать разные бизнес-процессы</li><li>найти оптимальные для каждого конкретного клиента IT решения и внедрить их на предприятии</li><li>своевременно оптимизировать и модернизировать информационную систему, программное обеспечение и парк имеющейся компьютерной техники</li><li>обеспечить бесперебойную работу предприятия при обновлении ПО или техники</li><li>выявить все слабые места имеющейся IT-системы и реорганизовать ее при необходимости</li><li>защитить корпоративные данные</li><li>облегчить документооборот и коммуникацию внутри компании</li><li>существенно улучшить контроль за работой персонала</li><li>уменьшить количество ошибок при выполнении повседневных бизнес-задач</li><li>определить уровень компетентности штатных ИТ-специалистов</li></ul></div></div></div></div></div></div><div class="t-col t-col_8 t-prefix_2"><div class="t849__accordion" data-accordion="false"><div class="t849__wrapper"><div class="t849__header " style="border-top: 1px solid #eee;"><button type="button" 
+class="t849__trigger-button" 
+aria-controls="accordion5_521988656" 
+aria-expanded="false"
+><span class="t849__title t-name t-name_xl" field="li_title__1531218700960" style="color:#827cba;">ИТ-разработка</span><span class="t849__icon"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: transparent;"></span></span><span class="t849__icon t849__icon-hover"><span class="t849__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t849__circle" style="background-color: #827cba"></span></span></button></div><div class="t849__content" 
+id="accordion5_521988656"
+hidden ><div class="t849__textwrapper"><div class="t849__text t-descr t-descr_sm" field="li_descr__1531218700960" style="">Мы осуществляем доработку, настройку и конфигурирование программ «1С:Предприятие» с целью оптимизации ведения учета, упрощения работы пользователей, автоматизации рутинных операций и бизнес-процессов, а так же повышения уровня контроля для руководства предприятий.<br /><br /><strong style="color: rgb(130, 124, 186);">Модули 1C</strong><br /><ul><li>Бухгалтерия, Зарплата и управление персоналом, Управление торговлей, Розница, Далион, ИТИЛ</li></ul></div></div></div></div></div><div class="t849__border" style="height: 1px; background-color: #eee;"></div></div></div></div><script type="text/javascript">t_onReady(function () {
+t_onFuncLoad('t849_init', function () {
+t849_init('521988656');
+});
+});</script></div><div id="rec520475842" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521464246" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="191" ><!-- T142 --><div class="t142"><div class="t-container_100"> <div class="t142__wrapone"><div class="t142__wraptwo"> <a href="#rec524467660" target="" class=""> <div class="t-btn t142__submit t-btn_md" style="color:#ffffff;background-color:#827cba;" > <span class="t142__text">Узнать больше</span> </div> </a> </div> </div></div></div><script>t_onReady(function() {
+t_onFuncLoad('t142_checkSize', function(){t142_checkSize('521464246');});
+});
+window.addEventListener('load', function(){
+t_onFuncLoad('t142_checkSize', function(){t142_checkSize('521464246');});
+});</script></div><div id="rec521464227" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec521463543" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="60" ><!-- T050 --><div class="t050"> <div class="t-container t-align_center"> <div class="t-col t-col_10 t-prefix_1"> <div class="t050__title t-title t-title_xxl" field="title" style=""><div style="font-size: 42px;" data-customstyle="yes"><span style="color: rgb(130, 124, 186);">Карьера</span></div></div> </div> </div></div></div><div id="rec521463594" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="171" ><!-- T157 --><div class="t157"> <div class="t-container"> <div class="t-col t-col_8 t-prefix_2"> <div field="text" style="border-left-color:#827cba;" class="t157__text t-text t-text_sm"><strong style="color: rgb(130, 124, 186); font-size: 24px;">Что мы предлагаем</strong><br /><br />Мы стремимся постоянно совершенствовать знания и навыки, чтобы повышать свой профессионализм и быть в курсе событий в динамично меняющемся мире информационных технологий.<br />У нас профессиональная команда инженеров, аналитиков и менеджеров проектов, которые поддерживают наших клиентов на каждом этапе - от анализа требований клиента до запуска и мониторинга.<br />Мы поддерживаем высокую мотивацию всех членов команды и создаём благоприятные условия для работы, чтобы наши специалисты могли повышать свою квалификацию и достигать своих профессиональных целей.</div> </div> </div></div></div><div id="rec521463671" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="106" ><!-- T004 --><div class="t004"><div class="t-container "> <div class="t-col t-col_8 t-prefix_2"><div field="text" class="t-text t-text_md " style=""><p style="text-align: center;"><strong style="color: rgb(130, 124, 186); font-size: 42px;">Ищешь интересную работу?</strong></p><br /><p style="text-align: center;"><span style="font-size: 22px;">Отправь резюме и мы перезвоним</span></p></div></div></div></div></div><div id="rec521996837" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="191" ><!-- T142 --><div class="t142"><div class="t-container_100"> <div class="t142__wrapone"><div class="t142__wraptwo"> <a href="#popup:myform" target="" class=""> <div class="t-btn t142__submit t-btn_md" style="color:#ffffff;border:3px solid #827cba;background-color:#827cba;" > <span class="t142__text">Отправить резюме</span> </div> </a> </div> </div></div></div><script>t_onReady(function() {
+t_onFuncLoad('t142_checkSize', function(){t142_checkSize('521996837');});
+});
+window.addEventListener('load', function(){
+t_onFuncLoad('t142_checkSize', function(){t142_checkSize('521996837');});
+});</script></div><div id="rec521996961" class="r t-rec" style=" " data-animationappear="off" data-record-type="702" ><!-- T702 --><div class="t702"><div class="t-popup" data-tooltip-hook="#popup:myform"
+role="dialog" 
+aria-modal="true" 
+tabindex="-1"
+aria-label=" Ищешь интересную работу? " ><div class="t-popup__container t-width t-width_6"><div class="t702__wrapper"><div class="t702__text-wrapper t-align_center"><div class="t702__title t-title t-title_xxs" style="color:#827cba;"><strong>Ищешь интересную работу?</strong></div><div class="t702__descr t-descr t-descr_xs" style="">Отправь резюме и мы перезвоним</div></div> 
+<form id="form521996961" name='form521996961' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_4 " data-success-callback="t702_onSuccess" > <input type="hidden" name="formservices[]" value="68848f590a7298464de08716bcac21cd" class="js-formaction-services"> 
+<div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;">Резюме успешно отправлено</div> <div class="t-form__inputsbox"> <div class="t-input-group t-input-group_nm" data-input-lid="1495810359387"> <div class="t-input-block"> <input type="text" autocomplete="name" name="Name" class="t-input js-tilda-rule " value="" placeholder="ФИО" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #c9c9c9; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"> <div class="t-input-error"></div> </div> </div> <div class="t-input-group t-input-group_em" data-input-lid="1495810354468"> <div class="t-input-block"> <input type="text" autocomplete="email" name="Email" class="t-input js-tilda-rule " value="" placeholder="E-mail" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #c9c9c9; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"> <div class="t-input-error"></div> </div> </div> <div class="t-input-group t-input-group_ph" data-input-lid="1495810410810"> <div class="t-input-block"> 
+<input type="tel" autocomplete="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="521996961" data-phonemask-lid="1495810410810" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule " value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #c9c9c9; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"> <script type="text/javascript"> 
+if (! document.getElementById('t-phonemask-script')) {
+(function (d, w, o) {
+var n=d.getElementsByTagName(o)[0],s=d.createElement(o),f=function(){n.parentNode.insertBefore(s,n);};
+s.type = "text/javascript";
+s.async = true;
+s.id = 't-phonemask-script';
+s.src="https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
+if (w.opera=="[object Opera]") {d.addEventListener("DOMContentLoaded", f, false);} else { f(); }
+})(document, window, 'script');
+} else {
+t_onReady(function () {
+t_onFuncLoad('t_form_phonemask_load', function () {
+var phoneMasks = document.querySelectorAll('#rec521996961 [data-phonemask-lid="1495810410810"]');
+t_form_phonemask_load(phoneMasks);
+});
+});
+}
+</script> <div class="t-input-error"></div> </div> </div> <div class="t-input-group t-input-group_uw" data-input-lid="1669888364898"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1669888364898" style="">Резюме</div> <div class="t-input-block"> <div class="t-upwidget" style='margin-bottom:10px;'> <input type="text" type="hidden" role="upwidget-uploader" class="js-tilda-rule" name="Резюме" data-tilda-upwidget-key="yandex-e31b2f1eb87d3bda75a13c7" data-tilda-req="1" style="display:none;"> <script src='https://static.tildacdn.com/js/tilda-upwidget-1.1.min.js' async></script> </div> <div class="t-input-error"></div> </div> </div><div class="t-form__errorbox-middle"> <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;"> <div class="t-form__errorbox-text t-text t-text_md"> <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p> </div> </div></div> <div class="t-form__submit"> <button type="submit" class="t-submit" style="color:#ffffff;background-color:#827cba;border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;" >Отправить</button> </div> </div> <div class="t-form__errorbox-bottom"> <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;"> <div class="t-form__errorbox-text t-text t-text_md"> <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p> </div> </div> </div> </form><style>#rec521996961 input::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 input::-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 input:-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 input:-ms-input-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 textarea::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 textarea::-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 textarea:-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec521996961 textarea:-ms-input-placeholder {color:#000000; opacity: 0.5;}</style></div></div><div class="t-popup__close t-popup__block-close"><button type="button" class="t-popup__close-wrapper t-popup__block-close-button" aria-label="Закрыть диалог"><svg role="presentation" class="t-popup__close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd"><rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect><rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect></g></svg></button></div></div></div><script>t_onReady(function () {
+t_onFuncLoad('t702_initPopup', function () {
+t702_initPopup('521996961');
+});
+/* fix for Android */
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
+if (isAndroid) {
+document.querySelector('.t-body').classList.add('t-body_scrollable-fix-for-android');
+document.querySelector('head').insertAdjacentHTML('beforeend', '<style>@media screen and (max-width: 560px) {\n.t-body_scrollable-fix-for-android {\noverflow: visible !important;\n}\n}\n</style>');
+console.log('Android css fix was inited');
+}
+});</script></div><div id="rec521463640" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec524467542" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="572" ><!-- t572 --><div class="t572"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><div class="t-section__title t-title t-title_xs" field="btitle"><span style="color: rgb(130, 124, 186);">Контакты</span></div><div class="t-section__descr t-descr t-descr_xl t-margin_auto" field="bdescr">Телефон: <a href="tel:73432151496" style="color: rgb(130, 124, 186);">+7 (343) 215-14-96</a><br />E-mail: <a href="mailto:info@itprsp.ru" style="color: rgb(130, 124, 186);">info@itprsp.ru</a></div></div></div></div><div class="t572__container t-container"><div class="t-col t-col_6 t-prefix_3 t-align_center"> <div class="t572__text t-text t-text_sm" field="text" style=""><div style="font-size:22px;" data-customstyle="yes">Юридический адрес: 620075, Свердловская область, г. Екатеринбург, ул. Мамина-Сибиряка, д.85А, оф.308</div></div></div> </div></div></div><div id="rec524467660" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="106" ><!-- T004 --><div class="t004"><div class="t-container "> <div class="t-col t-col_8 t-prefix_2"><div field="text" class="t-text t-text_md " style=""><div style="font-size: 42px;" data-customstyle="yes"><p style="text-align: center;"><strong style="color: rgb(130, 124, 186);">Обратная связь</strong></p></div></div></div></div></div></div><div id="rec524467731" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-animationappear="off" data-record-type="678" ><!-- t678 --><div class="t678 "> 
+<div class="t-container"> <div class="t-col t-col_8 t-prefix_2"> <div> 
+<form id="form524467731" name='form524467731' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_4 " data-success-callback="t678_onSuccess" > <input type="hidden" name="formservices[]" value="68848f590a7298464de08716bcac21cd" class="js-formaction-services"> 
+<div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;color:#ffffff;background-color:#827cba;">Ваше сообщение успешно отправлено</div> <div class="t-form__inputsbox"> <div class="t-input-group t-input-group_nm" data-input-lid="1494858943227"> <div class="t-input-block"> <input type="text" autocomplete="name" name="Name" class="t-input js-tilda-rule " value="" placeholder="ФИО" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div> <div class="t-input-group t-input-group_em" data-input-lid="1493283059688"> <div class="t-input-block"> <input type="text" autocomplete="email" name="Email" class="t-input js-tilda-rule " value="" placeholder="E-mail" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div> <div class="t-input-group t-input-group_ph" data-input-lid="1495040492013"> <div class="t-input-block"> 
+<input type="tel" autocomplete="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="524467731" data-phonemask-lid="1495040492013" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule " value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #000000; "> <script type="text/javascript"> 
+if (! document.getElementById('t-phonemask-script')) {
+(function (d, w, o) {
+var n=d.getElementsByTagName(o)[0],s=d.createElement(o),f=function(){n.parentNode.insertBefore(s,n);};
+s.type = "text/javascript";
+s.async = true;
+s.id = 't-phonemask-script';
+s.src="https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
+if (w.opera=="[object Opera]") {d.addEventListener("DOMContentLoaded", f, false);} else { f(); }
+})(document, window, 'script');
+} else {
+t_onReady(function () {
+t_onFuncLoad('t_form_phonemask_load', function () {
+var phoneMasks = document.querySelectorAll('#rec524467731 [data-phonemask-lid="1495040492013"]');
+t_form_phonemask_load(phoneMasks);
+});
+});
+}
+</script> <div class="t-input-error"></div> </div> </div> <div class="t-input-group t-input-group_ta" data-input-lid="1495027254430"> <div class="t-input-block"> <textarea name="Textarea" class="t-input js-tilda-rule " placeholder="Сообщение" style="color:#000000; border:1px solid #000000; height:102px;" rows="3"></textarea> <div class="t-input-error"></div> </div> </div><div class="t-form__errorbox-middle"> <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;"> <div class="t-form__errorbox-text t-text t-text_md"> <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p> </div> </div></div> <div class="t-form__submit"> <button type="submit" class="t-submit" style="color:#ffffff;background-color:#827cba;" >Отправить</button> </div> </div> <div class="t-form__errorbox-bottom"> <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;"> <div class="t-form__errorbox-text t-text t-text_md"> <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p> </div> </div> </div> </form><style>#rec524467731 input::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 input::-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 input:-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 input:-ms-input-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 textarea::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 textarea::-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 textarea:-moz-placeholder {color:#000000; opacity: 0.5;}
+#rec524467731 textarea:-ms-input-placeholder {color:#000000; opacity: 0.5;}</style> </div> 
+</div> 
+</div> </div> 
+</div><div id="rec520480848" class="r t-rec t-rec_pt_15 t-rec_pb_15" style="padding-top:15px;padding-bottom:15px; " data-record-type="219" ><!-- T191 --><div class="t191"> <div class="t-align_center"> <hr class="t191__line t-width t-width_2" style="background-color:#000000;opacity:0.2;"> </div></div></div><div id="rec520481242" class="r t-rec" style="background-color:#827cba; " data-animationappear="off" data-record-type="981" data-bg-color="#827cba"><!-- t981 --><div class="t981"><div class="t981__wrapper t-container"><div class="t981__col t981__col_left"><div class="t981__logo-wrapper"><img class="t981__logo t-img" 
+src="images/tild3938-3661-4234-a435-343631653930__32776__.png" 
+imgfield="img"
+style="max-width: 195px;" alt="" role="presentation"></div></div><div class="t981__col t981__col_right" style="width: auto;"><div class="t981__menu t981__main-menu" style="justify-content:flex-start;"><div class="t981__menu-item"><a class="t981__menu-link" style="color:#ffffff;text-transform:uppercase;" href="#rec520475311" data-menu-submenu-hook="" >Компания</a></div><div class="t981__menu-item"><a class="t981__menu-link" style="color:#ffffff;text-transform:uppercase;" href="#rec521988656" data-menu-submenu-hook="" >Услуги</a></div><div class="t981__menu-item"><a class="t981__menu-link" style="color:#ffffff;text-transform:uppercase;" href="#rec521463543" data-menu-submenu-hook="" >Карьера</a></div><div class="t981__menu-item"><a class="t981__menu-link" style="color:#ffffff;text-transform:uppercase;" href="#rec524467542" data-menu-submenu-hook="" >Контакты</a></div></div><div class="t981__menu t981__secondary-menu" style="color:#ffffff;; justify-content:flex-start;" field="text">© 2022 ООО "ИТ-ПЕРСПЕКТИВА"</div></div></div></div></div></div><!--/allrecords-->
