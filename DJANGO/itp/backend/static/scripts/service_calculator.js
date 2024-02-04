@@ -621,8 +621,6 @@ function showOrdering() {
 
     });
 
-    // Устанавливаем маску для телефона
-
     const submit = document.createElement('button');
     submit.type = 'button';
     order_div.appendChild(submit);
@@ -650,6 +648,7 @@ function showOrdering() {
         fixed_background.hidden = true; 
     };
     
+    // Устанавливаем маску для телефона
     IMask(document.getElementById('order_phone'), {mask: '+{7} (000) 000-00-00'})
 
 }
@@ -690,11 +689,13 @@ function countCart() {
         // Для распределения параметров в чеке
         function distributeServiceInTicket(id, value) {
             if (!identificators[id].isAdditionalService && identificators[id].price * value !== 0) {
+                if (value === 'on') value = 'Да';
                 ticket_config.push({
                     name: identificators[id].name,
                     value: value
                 });
             } else if (identificators[id].isAdditionalService && identificators[id].price * value !== 0){
+                if (value === 'on') value = 'Да';
                 ticket_additionalService.push({
                     name: identificators[id].name,
                     value: value

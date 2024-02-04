@@ -1,0 +1,29 @@
+<html>
+<head>
+    <style>
+        * {
+            color: black;
+        }
+
+        .order_title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .user_info {
+            font-size: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="order_title">Заказ №{{ order_number }}</h1>
+
+    <p class="user_info">ФИО: {{ user_name }}</p>
+    <p class="user_info">Телефон: {{ user_phone }}</p>
+    <p class="user_info">E-mail: {{ user_email }}</p>
+
+    
+</body>
+</html>
