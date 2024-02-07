@@ -148,9 +148,23 @@ function createSelectorSlider(element) {
             identificators[element.id].price = inherit_elem.value * element.price
             countCart();
         }
+
+        // Так же притягиваем действия, если дочерний элемент не менялся
+        identificators[element.id].price = inherit_elem.value * element.price
+    
+        range.oninput = () => {
+            document.getElementById(element.id).value = range.value;
+
+            identificators[element.id].price = inherit_elem.value * element.price
+
+            countCart();
+        }
+
     } else if (element.inherit_by !== null && element.inherit_by === '*') {
         input.setAttribute('inherit_by', '*');
     }
+
+
 
     return service_inputs;
 };
