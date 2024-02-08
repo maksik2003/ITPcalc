@@ -657,6 +657,12 @@ function showOrdering() {
         
         if (!fields_full) return;
 
+        createOrder(
+            username = document.getElementById('order_name').value,
+            phone = document.getElementById('order_phone').value,
+            email = document.getElementById('order_email').value
+        )
+
         order_div.remove();
         body.style = 'overflow: visible;';
         fixed_background.hidden = true; 
@@ -665,6 +671,101 @@ function showOrdering() {
     // Устанавливаем маску для телефона
     IMask(document.getElementById('order_phone'), {mask: '+{7} (000) 000-00-00'})
 
+}
+
+function createOrder(username, phone, email) {
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const ticket_sum = document.getElementById('ticket_sum').innerText.slice(0,-6);
+
+    let order_params = {};
+
+    cart.map( e => {
+        let multiply = 0;
+
+        // Собираем все слайдеры, которые отображены в блоках, которые положены в карзину
+        const inputs = document.querySelectorAll('#' + e + ' .service_slider_numbers');
+        const checkboxs = document.querySelectorAll('#' + e + ' .service_checkbox_hidden');
+        const lists = document.querySelectorAll('#' + e + ' .service_list_head_btn');
+        const statics = document.querySelectorAll('#' + e + ' .service_static');
+
+        let ticket_config              = []; // Список с конфигурациями
+        let ticket_additionalService   = []; // Список с доп. услугами
+        let ticket_gift                = []; // Список с бонусами
+        
+        // Для распределения параметров в чеке
+        function distributeServiceInTicket(idi, value) {
+            const elementik = document.getElementById(idi);
+            // console.log(elementik.checked);
+            // console.log(identificators[idi]);
+            if (!identificators[idi].isAdditionalService && identificators[idi].price * value !== 0) {
+                if (value === 'on') value = elementik.checked ? 'Да' : 'Нет';
+                ticket_config.push({
+                    name: identificators[idi].name,
+                    value: value
+                });
+            } else if (identificators[idi].isAdditionalService && identificators[idi].price * value !== 0){
+                if (value === 'on') value = elementik.checked ? 'Да' : 'Нет';
+                ticket_additionalService.push({
+                    name: identificators[idi].name,
+                    value: value
+                });
+            }
+        };
+
+        // Проверяем возможность бонуса
+        function checkGift(id, value) {
+            const iden = identificators[id]
+
+            if (iden.isTwoByOne && value <= iden.twoByOneValue && parseInt(value) !== 0) {
+                ticket_gift.push({
+                    name: iden.name,
+                    value: value
+                });
+            } else if (iden.isTwoByOne && value > iden.twoByOneValue && parseInt(value) !== 0) {
+                ticket_gift.push({
+                    name: iden.name,
+                    value: iden.twoByOneValue
+                });
+            }
+        }
+
+        [inputs, checkboxs, lists, statics].map( els => {
+            els.forEach( inp => {
+                // console.log(inp.id);
+                if (inp.getAttribute('inherit_by') === '*') {
+                    multiply += inp.value;
+                } else {
+                    distributeServiceInTicket(inp.id, inp.value);
+                    checkGift(inp.id, inp.value);
+                }
+            });
+        });
+
+        const block_name = document.getElementById(e).getAttribute('name')
+        order_params[block_name] = {}
+        order_params[block_name]['multiply'] = parseInt(multiply);
+        order_params[block_name]['ticket_config'] = ticket_config;
+        order_params[block_name]['ticket_additionalService'] = ticket_additionalService;
+        order_params[block_name]['ticket_gift'] = ticket_gift;
+
+    });
+
+    let order = {
+        'name': username,
+        'phone': phone,
+        'email': email,
+        'ticket_sum': ticket_sum,
+        'order_params': order_params
+    }
+
+    fetch(window.location.href + 'api/createOrder', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-CSRFToken': csrftoken
+        },
+        body: JSON.stringify(order)
+    });
 }
 
 // Подсчет услуг, которые были добавлены в корзину

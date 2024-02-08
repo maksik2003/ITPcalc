@@ -51,3 +51,21 @@ class templateParams(models.Model):
     id_template = models.ForeignKey(templates, on_delete=models.PROTECT)
     id_text_param = models.ForeignKey(parameters, on_delete=models.PROTECT)
     value = models.CharField(max_length=64)
+
+class logging(models.Model):
+
+    log = models.TextField()
+    parameters = models.TextField(null=True)
+    creationTime = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.log
+    
+class orders(models.Model):
+
+    username = models.CharField(max_length=256)
+    phone = models.CharField(max_length=20)
+    email = models.CharField(max_length=64)
+    services = models.JSONField(max_length=8)
+    ticket_summary = models.FloatField()
+    creationTime = models.DateTimeField(auto_now_add=True)

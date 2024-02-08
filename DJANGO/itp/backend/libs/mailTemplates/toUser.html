@@ -1,0 +1,97 @@
+<html>
+<head lang="ru">
+</head>
+<body style="font-family: Arial;">
+    <div>
+        <font face="Arial" style="color: #000000">
+            <table style="width: 500px; border: 1px solid #eeeeee; border-radius: 13px;" cellpadding="0" cellspacing="0">
+                <!-- Header -->
+                <tr style="width: 100%; height: 30px;">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr style="width: 100%; height: 30px;">
+                    <th style="width: 30px;"></th>
+                    <th style="text-align: left; vertical-align: top; font-size: 16px; font-weight: 700;">Заказ №{{ order_number }}</th>
+                    <th style="width: 30px;"></th>
+                </tr>
+                <tr style="width: 100%; height: 30px;">
+                    <th style="width: 30px;"></th>
+                    <th style="text-align: left; vertical-align: top; font-size: 14px; font-weight: 400;">Вы оформили заказ на хостинг вирутальных ресурсов<br>Подробности заказа:</th>
+                    <th style="width: 30px;"></th>
+                </tr>
+                <!-- END Header -->
+
+                <!-- Order -->
+                <tr style="width: 100%; height: 20px;">
+                    <th style="width: 30px;"></th>
+                    <th></th>
+                    <th style="width: 30px;"></th>
+                </tr>
+                {% for line in service %}
+                    <tr style="width: 100%; height: 25px;">
+                        <th style="width: 30px;"></th>
+                        <th style="font-size: 14px; font-weight: 700; text-align: left;">{{ line.service_name }}</th>
+                        <th style="width: 30px;"></th>
+                    </tr>
+                    {% for param in line.params %}
+                        <tr style="width: 100%; height: 25px;">
+                            <th style="width: 30px;"></th>
+                            <th>
+                                <table>
+                                    <tr>
+                                        <th style="width: 10px; height: 16px;"></th>
+                                        <th style="width: 200px; text-align: left; height: 16px; font-weight: 500; font-size: 12px;">{{ param.name }}</th>
+                                        <th style="width: 260px; text-align: right; height: 16px; font-weight: 500; font-size: 12px;">{{ param.value }}</th>
+                                    </tr>
+                                </table>
+                            </th>
+                            <th style="width: 30px;"></th>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+                <tr style="width: 100%; height: 20px;">
+                    <th style="width: 30px;"></th>
+                    <th></th>
+                    <th style="width: 30px;"></th>
+                </tr>
+                <!-- END Order -->
+
+                <!-- Ticket summary -->
+                <tr>
+                    <th style="width: 30px;height: 30px;"></th>
+                    <th style="vertical-align: bottom; text-align: right; border-top: 1px solid #eeeeee;">Стоимость: {{ ticket_summary }} &#8381;/мес</th>
+                    <th style="width: 30px;height: 30px;"></th>
+                </tr>
+                <!-- END Ticket summary -->
+
+                <!-- Feedback -->
+                <tr>
+                    <th style="width: 30px;height: 20px;"></th>
+                    <th></th>
+                    <th style="width: 30px;height: 20px;"></th>
+                </tr>
+                <tr>
+                    <th style="width: 30px;"></th>
+                    <th style="vertical-align: bottom; text-align: left; color: #999999; font-size: 12px; font-weight: 400;">
+                        Контакты для обратной связи:<br>
+                        Телефон: +7 (343) 215-14-96<br>
+                        E-mail: info@itprsp.ru<br>
+                    </th>
+                    <th style="width: 30px;"></th>
+                </tr>
+                <!-- END Feedback -->
+
+                <!-- Footer -->
+                <tr>
+                    <th style="width: 30px;height: 30px;"></th>
+                    <th style="height: 30px;"></th>
+                    <th style="width: 30px;height: 30px;"></th>
+                </tr>
+                <!-- END Footer -->
+            </table>
+        </font>
+    </div>
+</body>
+</html>

@@ -9,6 +9,8 @@ PSW = '1020Love))'
 
 class mail:
 
+    MESSAGE_FROM = 'lunatic@motivtelecom.ru'
+
     def __init__(self, log, pas) -> None:
 
         self.login = log
@@ -18,36 +20,71 @@ class mail:
         self.server.starttls()
         self.server.login(self.login, self.password)
 
-    def send(self, to: str) -> None:
+    def sendToCorpMail(self, to: str, order_number, username: str, phone: str, email: str, service: list, ticket_summary: str) -> None:
+        """Выслать сообщение на корпоративную почту"""
 
+        order_number = str(order_number).zfill(8)
+
+        # Формируем сообщение
+        
+        # Загружаем шаблон
+        template = open('./backend/libs/mailTemplates/toCompany.html', 'r', encoding='utf-8').read()
+        template = Template(template)
+
+        # Формируем сообщение
         msg = MIMEMultipart()
-        order_number = str(randint(1, 1000))
-        order_number = order_number.zfill(8)
 
-        msg['From'] = 'lunatic@motivtelecom.ru'
+        msg['From'] = self.MESSAGE_FROM
         msg['To'] = to
         msg['Subject'] = order_number + ' | Поступил новый заказ'
 
-
-        # text = 'Привет! Тестовое письмо, отправленное с помомщью Python <h1 style="color: red;">Заголовок H1</h1>'
-        template = open('./backend/libs/mailTemplates/toCompany.html', 'r', encoding='utf-8').read()
-        template = Template(template)
         p = {
-            'user_name': 'Пономарев Максим Владимирович',
-            'user_phone': '+7 (000) 000-00-00',
-            'user_email': 'maksikponomarev2003@gmail.com',
+            'user_name': username,
+            'user_phone': phone,
+            'user_email': email,
             'order_number': order_number,
-            'service': [
-                {'service_name': 'Облачный сервер (x2)', 'params': [{'name': 'Количество vCPU', 'value': 'x2'}, {'name': 'RAM', 'value': 'x2'}, {'name': 'Загрузочный SSD', 'value': 'x50'}]},
-                {'service_name': 'Веб-хостинг (x1)', 'params': [{'name': 'Количество vCPU', 'value': 'x1'}, {'name': 'RAM', 'value': 'x2'}, {'name': 'Загрузочный SSD', 'value': 'x20'}, {'name': 'Резервное копирование дискового пространства', 'value': 'x1'}, {'name': 'Публичный IP', 'value': 'x1'}, {'name': 'Хостинг DNS записи', 'value': 'x1'}]}
-            ],
-            'ticket_summary': '4659.83'
+            'service': service,
+            'ticket_summary': ticket_summary
         }
         template = template.render(p)
 
         msg.attach(MIMEText(template, 'html'))
 
-        self.server.sendmail('lunatic@motivtelecom.ru', to, msg.as_string())
+        # Отправляем сообщение адресату
+        self.server.sendmail(self.MESSAGE_FROM, to, msg.as_string())
+
+    def sendToUser(self, order_number, username: str, phone: str, email: str, service: list, ticket_summary: str) -> None:
+        """Выслать сообщение на почту пользователя"""
+
+        order_number = str(order_number).zfill(8)
+
+        # Формируем сообщение
+        
+        # Загружаем шаблон
+        template = open('./backend/libs/mailTemplates/toUser.html', 'r', encoding='utf-8').read()
+        template = Template(template)
+
+        # Формируем сообщение
+        msg = MIMEMultipart()
+
+        msg['From'] = self.MESSAGE_FROM
+        msg['To'] = email
+        msg['Subject'] = order_number + ' | Вы оформили заказ'
+
+        p = {
+            'user_name': username,
+            'user_phone': phone,
+            'user_email': email,
+            'order_number': order_number,
+            'service': service,
+            'ticket_summary': ticket_summary
+        }
+        template = template.render(p)
+
+        msg.attach(MIMEText(template, 'html'))
+
+        # Отправляем сообщение адресату
+        self.server.sendmail(self.MESSAGE_FROM, email, msg.as_string())
 
     def close(self) -> None:
         self.server.quit()
@@ -55,10 +92,10 @@ class mail:
 if __name__ == '__main__':
 
     mail = mail(LOGIN, PSW)
-    mail.send(to='lunatic@motivtelecom.ru')
-    mail.send(to='tomilis@motivtelecom.ru')
-    mail.send(to='dizelevmaksim@gmail.com')
-    # mail.send(to='volodeev.e.o@motivtelecom.ru')
+    mail.sendToCorpMail(to='lunatic@motivtelecom.ru')
+    mail.sendToCorpMail(to='dizelevmaksim@gmail.com')
+    # mail.sendToCorpMail(to='tomilis@motivtelecom.ru')
+    # mail.sendToCorpMail(to='volodeev.e.o@motivtelecom.ru')
 
     mail.close()
 
