@@ -661,7 +661,7 @@ function showOrdering() {
             username = document.getElementById('order_name').value,
             phone = document.getElementById('order_phone').value,
             email = document.getElementById('order_email').value
-        )
+        );
 
         order_div.remove();
         body.style = 'overflow: visible;';

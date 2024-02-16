@@ -87,6 +87,15 @@ def createOrder(request):
     # т.к. данные, которые передаются с фронта передаются не в том виде в котором нам это надо, необходимо их сейчас переделать в нужный вид
     new_ar = []
     for ar in services:
+
+        # Если множитель пустой, то его не надо выводить
+        if not services[ar]['multiply']:
+            new_ar.append({
+                'service_name': ar,
+                'params': services[ar]['ticket_config'] + services[ar]['ticket_additionalService'] + services[ar]['ticket_gift']
+            })
+            continue
+        
         new_ar.append({
             'service_name': ar + ' (x' + str(services[ar]['multiply']) + ')',
             'params': services[ar]['ticket_config'] + services[ar]['ticket_additionalService'] + services[ar]['ticket_gift']
@@ -158,11 +167,6 @@ def createOrder(request):
             log = 'Во время отправки письма на клиентскую почту возникла ошибка',
             parameters = format_exc()
         )
-
-    # 3 - отправить информирование на почту компании
-    # 4 - в логи записать инфу об успешной отправке письма клиенту
-    # 5 - отправить информирование на почту клиента
-    # 6 - в логи записать инфу об успешной отправке письма клиенту
 
     # Закрываем соединение с почтовым сервером
     mail.close()

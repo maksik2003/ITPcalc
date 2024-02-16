@@ -61,6 +61,16 @@ input::-webkit-inner-spin-button {
     margin: 0 auto;
     width: 1140px;
     position: relative;
+    margin-left: -15%;
+    
+}
+
+#accordion6_521988656 {
+    overflow: visible;
+    display: none;
+    -webkit-transition: max-height ease-in-out .3s,opacity ease-in-out .3s;
+    -o-transition: max-height ease-in-out .3s,opacity ease-in-out .3s;
+    transition: max-height ease-in-out .3s,opacity ease-in-out .3s
 }
 
 .title {
