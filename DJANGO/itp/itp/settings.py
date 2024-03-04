@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os.path
 
+import backend.parameters as parameters
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(x19(2%x!b^ju=8l9^&f*c#rf0+f(a=_3%^7@dl#&@2(&-mzhx'
+SECRET_KEY = parameters.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_dump_load_utf8',
     'backend',
+    'encrypted_model_fields',
     "django_extensions"
 ]
 
@@ -86,11 +89,11 @@ WSGI_APPLICATION = 'itp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'itprsp',
-        'USER': 'itprsp_user',
-        'PASSWORD': 'v64)2PXz',
-        'HOST': 'it-db-test.corp.motiv',
-        'PORT': '5432',
+        'NAME': parameters.DATABASE_NAME,
+        'USER': parameters.DATABASE_USER,
+        'PASSWORD': parameters.DATABASE_USER_PASSWORD,
+        'HOST': parameters.DATABASE_HOST,
+        'PORT': parameters.DATABASE_PORT,
     }
 }
 
@@ -135,3 +138,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FIELD_ENCRYPTION_KEY = parameters.ENCRYPTION_KEY

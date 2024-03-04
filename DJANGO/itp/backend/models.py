@@ -1,4 +1,5 @@
 from django.db import models
+from encrypted_model_fields.fields import EncryptedCharField
 
 # Create your models here.
 class serviceList(models.Model):
@@ -69,3 +70,12 @@ class orders(models.Model):
     services = models.JSONField(max_length=8)
     ticket_summary = models.FloatField()
     creationTime = models.DateTimeField(auto_now_add=True)
+
+class mailServerOptions(models.Model):
+
+    user_login = models.CharField(max_length=128)
+    user_password = EncryptedCharField(max_length=32)
+    message_from = models.CharField(max_length=128)
+    server = models.CharField(max_length=64)
+    port = models.IntegerField(default=587)
+    companyMail = models.CharField(max_length=128)

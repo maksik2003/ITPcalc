@@ -4,19 +4,20 @@ from email.mime.text import MIMEText
 from jinja2 import Template
 from random import randint
 
-LOGIN = 'it_lunatic'
-PSW = '1020Love))'
+# Параметры для УЗ, которая будет использоваться для отправки почты
+LOGIN = ''
+PSW = ''
 
 class mail:
 
-    MESSAGE_FROM = 'lunatic@motivtelecom.ru'
 
-    def __init__(self, log, pas) -> None:
+    def __init__(self, log, pas, server, port, message_from) -> None:
 
         self.login = log
         self.password = pas
+        self.message_from = message_from
 
-        self.server = smtplib.SMTP('excas.corp.motiv', 587)
+        self.server = smtplib.SMTP(server, port)
         self.server.starttls()
         self.server.login(self.login, self.password)
 
@@ -34,7 +35,7 @@ class mail:
         # Формируем сообщение
         msg = MIMEMultipart()
 
-        msg['From'] = self.MESSAGE_FROM
+        msg['From'] = self.message_from
         msg['To'] = to
         msg['Subject'] = order_number + ' | Поступил новый заказ'
 
@@ -51,7 +52,7 @@ class mail:
         msg.attach(MIMEText(template, 'html'))
 
         # Отправляем сообщение адресату
-        self.server.sendmail(self.MESSAGE_FROM, to, msg.as_string())
+        self.server.sendmail(self.message_from, to, msg.as_string())
 
     def sendToUser(self, order_number, username: str, phone: str, email: str, service: list, ticket_summary: str) -> None:
         """Выслать сообщение на почту пользователя"""
@@ -67,7 +68,7 @@ class mail:
         # Формируем сообщение
         msg = MIMEMultipart()
 
-        msg['From'] = self.MESSAGE_FROM
+        msg['From'] = self.message_from
         msg['To'] = email
         msg['Subject'] = order_number + ' | Вы оформили заказ'
 
@@ -84,18 +85,19 @@ class mail:
         msg.attach(MIMEText(template, 'html'))
 
         # Отправляем сообщение адресату
-        self.server.sendmail(self.MESSAGE_FROM, email, msg.as_string())
+        self.server.sendmail(self.message_from, email, msg.as_string())
 
     def close(self) -> None:
         self.server.quit()
 
 if __name__ == '__main__':
 
+    if not (LOGIN or PSW):
+        raise '[!] LOGIN or PASSWORD is empty '
+    
     mail = mail(LOGIN, PSW)
     mail.sendToCorpMail(to='lunatic@motivtelecom.ru')
     mail.sendToCorpMail(to='dizelevmaksim@gmail.com')
-    # mail.sendToCorpMail(to='tomilis@motivtelecom.ru')
-    # mail.sendToCorpMail(to='volodeev.e.o@motivtelecom.ru')
 
     mail.close()
 

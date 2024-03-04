@@ -831,7 +831,12 @@ input[type=range] {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
+
+    .container {
+        margin-left: -20%;
+    }
+
     .calc_block {
         display: block;
     }
@@ -857,7 +862,16 @@ input[type=range] {
     }
 }
 
+@media (max-width: 768px) {
+    .container {
+        margin-left: -40px;
+    }
+}
+
 @media (max-width: 650px) {
+    .container {
+        margin-left: 0;
+    }
 
     .title {
         font-size: 40px;

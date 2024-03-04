@@ -13,11 +13,15 @@ def index(request):
 
 def loadCalcPage(request) -> list:
     """Загрузка всех данных для калькулятора путем единственного запроса"""
+
+    # Получаем данные из БД
     service_list = serviceList.objects.all()
 
+    # В случае, если данные не были получены, то выдаем ошибку сервера
     if not service_list:
         return HttpResponseServerError()
     
+    # Собираем данные в нужный вид, а так же подгружаем данные из других таблиц
     result = {}
     for sl in service_list:
 
@@ -119,10 +123,18 @@ def createOrder(request):
         parameters = new_order.id
     )
     
-    mail = mailsender.mail('it_lunatic', '1020Love))')
+    parameters = mailServerOptions.objects.filter()
+    if not parameters:
+        logging.objects.create(
+            log = 'В таблице с параметрами не найдено записей о параметрах'
+        )
+        raise ValueError('Нету данных для использования в авторизации на почтовом сервере')
+    
+    parameters = parameters[len(parameters) - 1]
+    mail = mailsender.mail(parameters.user_login, parameters.user_password, parameters.server, parameters.port, parameters.message_from)
     try:
         mail.sendToCorpMail(
-            to = 'lunatic@motivtelecom.ru',
+            to = parameters.companyMail,
             order_number = new_order.id,
             username = new_order.username,
             phone = new_order.phone,
