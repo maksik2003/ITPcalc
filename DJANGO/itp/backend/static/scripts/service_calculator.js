@@ -406,6 +406,27 @@ function addPageSelectors(element, counter) {
                 </clipPath>
             </defs>
         </svg>`
+
+        function getOffset(el) {
+            const rect = el.getBoundingClientRect();
+            return {
+              left: rect.x - 100,
+              top: rect.y + rect.height + 20
+            };
+          }
+
+        function showDescription(top, left) {
+            const help_block = document.getElementById('help_block');
+            help_block.style.position = 'fixed';
+            help_block.style.top = top + 'px';
+            help_block.style.left = left + 'px';
+
+            window.addEventListener('scroll', () => {
+                help_block.hidden = true;
+                help_block.setAttribute('isClicked', 'false');
+            });
+
+        }
         service_description_btn.onmouseover = () => {
             const help_block = document.getElementById('help_block');
             const help_title = document.getElementById('help_title');
@@ -415,6 +436,7 @@ function addPageSelectors(element, counter) {
 
             help_title.innerText = e.name;
             help_description.innerText = e.description;
+            showDescription(getOffset(service_description_btn).top, getOffset(service_description_btn).left);
         }
         service_description_btn.onmouseout = () => {
             if ((help_block.getAttribute('isClicked')) === 'false') {
@@ -432,6 +454,7 @@ function addPageSelectors(element, counter) {
             help_title.innerText = e.name;
             help_description.innerText = e.description;
 
+            showDescription(getOffset(service_description_btn).top, getOffset(service_description_btn).left);
             help_block.setAttribute('isClicked', 'true');
         }
 
@@ -1045,3 +1068,83 @@ function countCart() {
 
     document.getElementById('ticket_sum').innerHTML = (sumPrice).toFixed(2) + ' &#8381;/мес';
 };
+
+function changeCalcVisability() {
+
+    function slideUp(target, duration=300) {
+        if (!target)
+            return;
+        if (!duration && duration !== 0)
+            duration = 300;
+        target.style.transitionProperty = 'height, margin, padding';
+        target.style.transitionDuration = duration + 'ms';
+        target.style.boxSizing = 'border-box';
+        target.style.height = target.offsetHeight + 'px';
+        target.offsetHeight;
+        // target.style.overflowY = 'hidden';
+        target.style.height = '0';
+        target.style.paddingTop = '0';
+        target.style.paddingBottom = '0';
+        target.style.marginTop = '0';
+        target.style.marginBottom = '0';
+        setTimeout(function() {
+            target.style.display = 'none';
+            target.style.height = '';
+            target.style.paddingTop = '';
+            target.style.paddingBottom = '';
+            target.style.marginTop = '';
+            target.style.marginBottom = '';
+            // target.style.overflowY = '';
+            target.style.transitionDuration = '';
+            target.style.transitionProperty = ''
+        }, duration)
+    }
+    function slideDown(target, duration=300) {
+        if (!target)
+            return;
+        if (!duration && duration !== 0)
+            duration = 300;
+        target.style.display = '';
+        var cashedDisplay = window.getComputedStyle(target).display;
+        if (cashedDisplay === 'none')
+            cashedDisplay = 'block';
+        target.style.display = cashedDisplay;
+        var targetHeight = target.offsetHeight;
+        // target.style.overflowY = 'hidden';
+        target.style.height = '0';
+        target.style.paddingTop = '0';
+        target.style.paddingBottom = '0';
+        target.style.marginTop = '0';
+        target.style.marginBottom = '0';
+        target.offsetHeight;
+        target.style.boxSizing = 'border-box';
+        target.style.transitionProperty = 'height, margin, padding';
+        target.style.transitionDuration = duration + 'ms';
+        target.style.height = targetHeight + 'px';
+        target.style.paddingTop = '';
+        target.style.paddingBottom = '';
+        target.style.marginTop = '';
+        target.style.marginBottom = '';
+        setTimeout(function() {
+            target.style.height = '';
+            // target.style.overflowY = '';
+            target.style.transitionDuration = '';
+            target.style.transitionProperty = ''
+        }, duration)
+    }
+
+    const container = document.getElementById('container');
+    const icon = document.getElementById('vis_con_icon');
+
+    if (container.hidden) {
+        icon.classList.add('vis_con_icon_opened');
+        container.hidden = false;
+        slideDown(container);
+        return
+    }
+
+    icon.classList.remove('vis_con_icon_opened');
+    container.hidden = true;
+    slideUp(container);
+}
+

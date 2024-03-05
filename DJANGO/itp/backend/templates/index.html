@@ -7,7 +7,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="container" id="container">
+<button class="visible_container" onclick="changeCalcVisability()">
+    <div class="t849__title t-name t-name_xl" style="color: #827cba">
+        ИТ-облако
+    </div>
+    <div class="vis_con">
+        <div class="vis_con_icon" id="vis_con_icon">
+            <svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke-width="2px" fill-rule="evenodd" stroke-linecap="square">
+                    <g transform="translate(1.000000, 1.000000)">
+                        <path d="M0,11 L22,11"></path>
+                        <path d="M11,0 L11,22"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+</button>
+<div class="container" id="container" hidden>
     <!-- <h1 class="title">Калькулятор ресурсов</h1> -->
 
     <nav class="navigation" id="navigation"></nav>

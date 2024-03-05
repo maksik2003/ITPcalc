@@ -5,3 +5,5 @@ www.zip
 *.pyc
 Инструкции/
 DJANGO/itp/backend/parameters.py
+*.doc
+*.xls
