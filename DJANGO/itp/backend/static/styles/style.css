@@ -947,6 +947,11 @@ input[type=range] {
 
 @media (max-width: 650px) {
 
+    .container {
+        width: calc(100% - 10px);
+        margin: 0;
+    }
+
     .visible_container {
         margin: 0;
         margin-left: 20px;
@@ -988,11 +993,11 @@ input[type=range] {
     }
 
     .service_desc {
-        width: calc(100% - 20px);
+        width: 100%;
     }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 520px) {
 
     .service {
         display: block;
@@ -1006,9 +1011,27 @@ input[type=range] {
         margin-bottom: 5px;
     }
 
+    .service_description p {
+        width: calc(100% - 20px);
+    }
+
     .ticket_lines {
         margin: 0;
         padding: 0;
         padding-bottom: 10px;
+    }
+
+    .service_inputs,
+    .service_list_head_btn,
+    .service_list_div {
+        width: 100%;
+    }
+
+    .service_slider_numbers {
+        width: 100%;
+    }
+
+    .service_slider_range {
+        width: calc(100% - 10px);
     }
 }
